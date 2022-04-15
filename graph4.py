@@ -16,7 +16,7 @@ def animate(i):
     data = pd.read_csv('data.csv')
     x = data['x_value'][-100:]
     # y1 = data['total_1'][-100:]
-    y2 = data['total_2'][-100:]
+    y2 = data['LC'][-100:]
 
     plt.cla()
 
