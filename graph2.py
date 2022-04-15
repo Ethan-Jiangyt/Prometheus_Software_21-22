@@ -14,7 +14,7 @@ index = count()
 
 def animate(i):
     data = pd.read_csv('data.csv')
-    x = data['x_value'][-100:]
+    x = data['time'][-100:]
     y1 = data['TC1'][-100:]
     y2 = data['TC2'][-100:]
     y3 = data['TC3'][-100:]
@@ -22,10 +22,10 @@ def animate(i):
 
     plt.cla()
 
-    plt.plot(x, y1, label='Channel 1')
-    plt.plot(x, y2, label='Channel 2')
-    plt.plot(x, y3, label='Channel 3')
-    plt.plot(x, y4, label='Channel 4')
+    plt.plot(x, y1, label='TC1')
+    plt.plot(x, y2, label='TC2')
+    plt.plot(x, y3, label='TC3')
+    plt.plot(x, y4, label='TC4')
 
     plt.legend(loc='upper left')
     plt.tight_layout()

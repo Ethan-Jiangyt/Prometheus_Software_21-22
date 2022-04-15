@@ -3,11 +3,11 @@ import random
 import time
 import serial 
 
-x_value = 0
+time = 0
 
 ser = serial.Serial('/dev/cu.usbmodem142201', 9600) 
 
-fieldnames = ["x_value", "total_1", "total_2"]
+fieldnames = ["time", "TC1", "TC2", "TC3", "TC4", "PT1", "PT2", "PT3", :"PT4", "LC"]
 
 
 with open('data.csv', 'w') as csv_file:
@@ -22,7 +22,7 @@ while True:
         data = line.split(',')
         if len(data) == 9 : 
             info = {
-                "x_value": x_value,
+                "time": time,
                 "TC1": data[0],
                 "TC2": data[1],
                 "TC3": data[2],
@@ -34,7 +34,7 @@ while True:
                 "LC": data[8],
             }
 
-            x_value += 1
+            time += 1
             csv_writer.writerow(info)
             print(x_value, data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8])
 
