@@ -27,7 +27,6 @@ def animate(i):
     plt.plot(x, y3, label='Channel 3')
     plt.plot(x, y4, label='Channel 4')
 
-
     plt.legend(loc='upper left')
     plt.tight_layout()
 

@@ -4,9 +4,6 @@ import time
 import serial 
 
 x_value = 0
-total_1 = 1000
-total_2 = 1000
-
 
 ser = serial.Serial('/dev/cu.usbmodem142201', 9600) 
 
@@ -23,7 +20,7 @@ while True:
         csv_writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
         line = ser.readline().decode()[:-1] #TC1,TC2,TC3,TC4,PT1,PT2,PT3,PT4,LC
         data = line.split(',')
-        if len(data) == 9 
+        if len(data) == 9 : 
             info = {
                 "x_value": x_value,
                 "TC1": data[0],
@@ -37,6 +34,7 @@ while True:
                 "LC": data[8],
             }
 
+            x_value += 1
             csv_writer.writerow(info)
             print(x_value, data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8])
 
