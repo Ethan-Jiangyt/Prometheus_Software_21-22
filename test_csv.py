@@ -14,13 +14,15 @@ start_time = millis()
 fieldnames = ["time", "TC1", "TC2", "TC3", "TC4", "PT1", "PT2", "PT3", "PT4", "LC"]
 data = [1000 for i in range(len(fieldnames)-1)] # tmp for dummy data
 
-with open('data.csv', 'w') as csv_file:
+logname = 'logs/data' + str(start_time) + '.csv'
+
+with open(logname, 'w') as csv_file:
     csv_writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
     csv_writer.writeheader()
 
 while True:
 
-    with open('data.csv', 'a') as csv_file:
+    with open(logname, 'a') as csv_file:
         csv_writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
         t = millis()-start_time
         info = {

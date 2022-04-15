@@ -1,8 +1,7 @@
 import subprocess
-import subprocess
 
 # Change to python or python3 if u need to
-python = 'python3'
+python = 'python'
 
 # process0 = subprocess.Popen([python], "read_serial.py")
 process1 = subprocess.Popen([python, "test_csv.py"]) # Create and launch process pop.py using python interpreter

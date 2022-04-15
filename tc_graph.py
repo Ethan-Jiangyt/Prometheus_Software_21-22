@@ -1,17 +1,18 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
+from constants import NUM_DATA_POINTS
 
 plt.style.use('fivethirtyeight')
 
 
 def animate(i):
     data = pd.read_csv('data.csv')
-    x = data['time'][-100:]
-    y1 = data['TC1'][-100:]
-    y2 = data['TC2'][-100:]
-    y3 = data['TC3'][-100:]
-    y4 = data['TC4'][-100:]
+    x = data['time'][-NUM_DATA_POINTS:]
+    y1 = data['TC1'][-NUM_DATA_POINTS:]
+    y2 = data['TC2'][-NUM_DATA_POINTS:]
+    y3 = data['TC3'][-NUM_DATA_POINTS:]
+    y4 = data['TC4'][-NUM_DATA_POINTS:]
 
     plt.cla()
 
@@ -19,12 +20,12 @@ def animate(i):
     plt.plot(x, y2, label='TC2')
     plt.plot(x, y3, label='TC3')
     plt.plot(x, y4, label='TC4')
-
+    plt.title('Thermocouples')
     plt.legend(loc='upper left')
     plt.tight_layout()
 
 
-ani = FuncAnimation(plt.gcf(), animate, interval=1)
+ani = FuncAnimation(plt.gcf(), animate, interval=40)
 
 plt.tight_layout()
 plt.show()
