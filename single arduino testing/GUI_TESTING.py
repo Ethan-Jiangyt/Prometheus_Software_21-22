@@ -7,25 +7,20 @@ import time
 big_label = 'Arial 20'
 small_label = 'Arial 15'
 label_width = 20
-dims = '500x500'
 
 t = 0
 hz = 16
 delay = 1/hz
-
-
 # get current time in ms
 def millis():
     return int(time.time_ns()/1000000)
 
 start_time = millis()
-logname = 'logs/data' + str(start_time) + '.csv'
-open(logname, 'w+')
 
 fieldnames = ["time", "TC1", "TC2", "TC3", "TC4", "PT1", "PT2", "PT3", "PT4", "LC"]
 data = [1000 for i in range(len(fieldnames)-1)] # tmp for dummy data
 
-
+logname = 'logs/data' + str(start_time) + '.csv'
 
 with open(logname, 'w') as csv_file:
     csv_writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
@@ -39,7 +34,7 @@ num_LCs = 1
 
 # Create GUI
 root = Tk()
-root.geometry(dims)
+root.geometry("500x500")
 
 
 # Labels
@@ -107,9 +102,8 @@ def update():
         csv_writer.writerow(info)
         print(t, data)
 
-        # Dummy data generation
         for i in range(9):
-            data[i] += random.uniform(-1, 1)
+            data[i] += random.random()
 
         # Update values to the screen
         TC_vals[0]['text'] = data[0]

@@ -5,6 +5,7 @@ import serial
 import os
 from constants import PORT, BAUDRATE
 
+
 # get current time in ms
 def millis():
     return int(time.time_ns()/1000000)
