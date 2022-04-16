@@ -9,10 +9,6 @@ small_label = 'Arial 15'
 label_width = 20
 dims = '500x500'
 
-t = 0
-hz = 16
-delay = 1/hz
-
 
 # get current time in ms
 def millis():
