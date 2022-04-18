@@ -1,10 +1,16 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
-from constants import NUM_DATA_POINTS
+from constants import NUM_DATA_POINTS, FIG_HEIGHT, FIG_WIDTH
 import os
 
 plt.style.use('fivethirtyeight')
+
+# Window positioning
+fig, ax = plt.subplots()
+fig.canvas.manager.window.wm_geometry("+%d+%d" % (0, 0))
+fig.set_figheight(FIG_HEIGHT)
+fig.set_figwidth(FIG_WIDTH)
 
 filename = max([f for f in os.scandir("logs")], key=lambda x: x.stat().st_mtime).name
 
