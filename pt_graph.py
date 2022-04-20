@@ -1,10 +1,10 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
-from constants import NUM_DATA_POINTS, FIG_HEIGHT, FIG_WIDTH
+from constants import *
 import os
 
-plt.style.use('fivethirtyeight')
+plt.style.use(THEME)
 
 # Window positioning
 fig, ax = plt.subplots()

@@ -7,6 +7,9 @@ BAUDRATE = 115200
 # Maximum amount of data points on a graph
 NUM_DATA_POINTS = 100
 
+
+THEME = 'dark_background'
+
 SCREEN_WIDTH_IN = 15
 SCREEN_HEIGHT_IN = 8
 SCREEN_WIDTH = 1920

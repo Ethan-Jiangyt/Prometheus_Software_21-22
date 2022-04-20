@@ -3,12 +3,15 @@ from random import randint
 import csv
 import random
 import time
+from constants import *
 
-big_label = 'Arial 20'
+
+big_label = 'Arial 18'
 small_label = 'Arial 15'
 label_width = 20
-dims = '500x500'
+dims = f'625x400+900+400'
 
+SHOW_DATA = False
 
 # get current time in ms
 def millis():
@@ -101,7 +104,9 @@ def update():
             }
 
         csv_writer.writerow(info)
-        print(t, data)
+
+        if SHOW_DATA:
+            print(t, data)
 
         # Dummy data generation
         for i in range(9):
