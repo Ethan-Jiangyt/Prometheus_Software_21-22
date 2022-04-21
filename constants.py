@@ -7,6 +7,10 @@ BAUDRATE = 115200
 # Maximum amount of data points on a graph
 NUM_DATA_POINTS = 100
 
+# rate at which matplotlib's FuncAnimation refreshes
+REFRESH_RATE = 5
+
+
 
 THEME = 'dark_background'
 

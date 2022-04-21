@@ -127,7 +127,7 @@ def update():
 
     
 
-    root.after(40, update)
+    root.after(REFRESH_RATE, update)
 
 update()
 
