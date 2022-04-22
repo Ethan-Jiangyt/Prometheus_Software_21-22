@@ -12,4 +12,4 @@ python main.py
 - clean up the code
 - maybe think of better ways to start/stop the program
 - start/stop logging on command?? idk
-- CSV read/write operation optimizations
+- CSV read/write operation optimizations https://towardsdatascience.com/%EF%B8%8F-load-the-same-csv-file-10x-times-faster-and-with-10x-less-memory-%EF%B8%8F-e93b485086c7
